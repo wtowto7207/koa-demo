@@ -7,6 +7,7 @@
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-router": "^8.0.8",
+    "mysql": "^2.18.1",
     "tslint": "^6.1.2"
   },
   "devDependencies": {
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "watch-update": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts",
+    "watch-update": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "eslintConfig": {
@@ -35,7 +36,8 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "ecmaVersion": 2020
+      "ecmaVersion": 2020,
+      "sourceType": "module"
     },
     "rules": {},
     "overrides": [
