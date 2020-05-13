@@ -4,7 +4,16 @@
 
 /* 项目配置 */
 const config = {
-  Port: 5000
+  //端口
+  Port: 5000,
+  //数据库连接设置
+  dbConfig: {
+    connection_limit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: 'MACmini_123456',
+    database: 'storeDB'
+  }
 };
 
 export default config;

@@ -4,4 +4,4 @@ let Routers = new Router();
 
 Routers.use(usersRouter.routes());
 
-module.exports = Routers;
+export default Routers;

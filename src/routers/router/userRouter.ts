@@ -5,6 +5,6 @@ import usersController from '../../controllers/usersController';
 
 let usersRouter = new Router();
 
-usersRouter.post("/user/login", usersController);
+usersRouter.post("/user/login", usersController.Login);
 
-module.exports = usersRouter;
+export default usersRouter;
