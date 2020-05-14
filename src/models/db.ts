@@ -16,13 +16,14 @@ export function query (sql: string, params?: Array<any>) {
             }
 
             connection.query(sql, params, function(error, results) {
-                console.log(`${ sql }=>${ params }`);
+                console.log(`${ sql } => ${ params }`);
                 //释放连接
                 connection.release();
                 if (error) {
                     reject(error);
                     return;
                 }
+                //返回结果
                 resolve(results);
             })
 
