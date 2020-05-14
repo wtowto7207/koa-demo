@@ -2,15 +2,13 @@ import userDao from "../models/dao/usersDao";
 const usersController = {
   Login: async (ctx) => {
     console.log(ctx.request.body);
-    // let { userName, password } = ctx.request.body;
-    // const userName = ctx.request.body.userName;
-    // const password = ctx.request.password;
+    let { userName, password } = ctx.request.body;
     //校验用户信息是否符合规则
     // if (!checkUserInfo(ctx, userName, password)) {
     //     return;
     // }
     //连接数据库根据用户名和密码查询用户信息
-    let user: any = await userDao.Login("duodu", "123456");
+    let user: any = await userDao.Login(userName, password);
     // 判断是否有该用户存在
     if (user.length === 0) {
       ctx.body = {
