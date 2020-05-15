@@ -1,8 +1,9 @@
 import userDao from "../models/dao/usersDao";
 import checkUser from '../middleware/checkUserInfo';
+import Application from "koa";
 const usersController = {
   //登录
-  Login: async (ctx) => {
+  Login: async (ctx: Application.Context) => {
     let { userName, password } = ctx.request.body;
     //校验用户信息是否符合规则
     if (!checkUser.checkUserInfo(ctx, userName, password)) {

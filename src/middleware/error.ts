@@ -1,6 +1,7 @@
+import Application from "koa";
 //全局错误处理中间件
 export default {
-  Error: async (ctx, next) => {
+  Error: async (ctx: Application.Context, next: Application.Next) => {
     try {
       await next();
     } catch (e) {
