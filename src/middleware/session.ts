@@ -1,6 +1,8 @@
+import session from "koa-session";
+
 const store = {
     storage: {},
-    set (key, session) {
+    set (key, session: session.ContextSession) {
         this.storage[key] = session;
     },
     get (key) {

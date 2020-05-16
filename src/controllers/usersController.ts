@@ -29,7 +29,9 @@ const usersController = {
         phone: user[0].userPhoneNumber,
       };
       //保存用户信息到session
-      ctx.session.user = loginUser;
+      if (ctx.session) {
+        ctx.session.user = loginUser;
+      }
       ctx.body = {
         code: 200,
         user: loginUser,
